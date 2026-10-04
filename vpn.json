@@ -1,0 +1,1015 @@
+{
+  "metadata": {
+    "total_servers": 43,
+    "generated_at": "2026-10-02T00:11:57.728163",
+    "source": "Verified Dedicated Inbound VPN Feeds"
+  },
+  "servers": [
+    {
+      "id": "vpn_sg_8",
+      "name": "SG-新加坡-Hetzner-vless-09",
+      "type": "vless",
+      "server": "5.223.41.93",
+      "port": 80,
+      "country": "Singapore",
+      "country_code": "SG",
+      "exit_ip": "5.223.41.93",
+      "real_ping_ms": 399.4,
+      "status": "online",
+      "clash_proxy": {
+        "encryption": "none",
+        "network": "ws",
+        "port": 80,
+        "server": "5.223.41.93",
+        "tls": false,
+        "type": "vless",
+        "uuid": "f2eada1b-fdec-48c6-8638-18ade32993d4",
+        "ws-opts": {
+          "path": "/"
+        },
+        "name": "SG-新加坡-Hetzner-vless-09"
+      },
+      "last_tested": "2026-10-02T00:09:21.405591"
+    },
+    {
+      "id": "vpn_ph_4",
+      "name": "PH-马尼拉-Bedge-ss-04",
+      "type": "ss",
+      "server": "149.104.109.252",
+      "port": 8882,
+      "country": "Philippines",
+      "country_code": "PH",
+      "exit_ip": "149.104.109.252",
+      "real_ping_ms": 482.4,
+      "status": "online",
+      "clash_proxy": {
+        "cipher": "aes-256-gcm",
+        "password": "kDWvXYZoTBcGkC4",
+        "port": 8882,
+        "server": "149.104.109.252",
+        "type": "ss",
+        "name": "PH-马尼拉-Bedge-ss-04"
+      },
+      "last_tested": "2026-10-02T00:09:09.835379"
+    },
+    {
+      "id": "vpn_kr_13",
+      "name": "KR-Incheon-Amazon-anytls-18",
+      "type": "anytls",
+      "server": "test01.y1static-content-distribution.shop",
+      "port": 47096,
+      "country": "Korea Republic of",
+      "country_code": "KR",
+      "exit_ip": "62.72.47.172",
+      "real_ping_ms": 552.9,
+      "status": "online",
+      "clash_proxy": {
+        "password": "3fc0f254-54c3-4cf3-896b-5999a2b4c757",
+        "port": 47096,
+        "server": "test01.y1static-content-distribution.shop",
+        "skip-cert-verify": true,
+        "sni": "xjp33.pulsarcore.site",
+        "type": "anytls",
+        "udp": true,
+        "name": "KR-Incheon-Amazon-anytls-18"
+      },
+      "last_tested": "2026-10-02T00:09:38.162734"
+    },
+    {
+      "id": "vpn_jp_1",
+      "name": "JP-东京-Datacamp-ss-01",
+      "type": "ss",
+      "server": "149.22.87.204",
+      "port": 443,
+      "country": "Japan",
+      "country_code": "JP",
+      "exit_ip": "149.22.87.204",
+      "real_ping_ms": 584.0,
+      "status": "online",
+      "clash_proxy": {
+        "cipher": "aes-128-gcm",
+        "password": "shadowsocks",
+        "port": 443,
+        "server": "149.22.87.204",
+        "type": "ss",
+        "name": "JP-东京-Datacamp-ss-01"
+      },
+      "last_tested": "2026-10-02T00:09:04.648755"
+    },
+    {
+      "id": "vpn_jp_6",
+      "name": "JP-东京-Contabo-ss-06",
+      "type": "ss",
+      "server": "84.247.155.196",
+      "port": 80,
+      "country": "Japan",
+      "country_code": "JP",
+      "exit_ip": "84.247.155.196",
+      "real_ping_ms": 587.3,
+      "status": "online",
+      "clash_proxy": {
+        "cipher": "aes-256-gcm",
+        "password": "3eOFeNssde7PYYMv",
+        "port": 80,
+        "server": "84.247.155.196",
+        "type": "ss",
+        "name": "JP-东京-Contabo-ss-06"
+      },
+      "last_tested": "2026-10-02T00:09:12.912867"
+    },
+    {
+      "id": "vpn_kr_35",
+      "name": "KR - zhuhai.uk",
+      "type": "vless",
+      "server": "13.124.252.207",
+      "port": 45314,
+      "country": "Korea Republic of",
+      "country_code": "KR",
+      "exit_ip": "13.124.252.207",
+      "real_ping_ms": 729.1,
+      "status": "online",
+      "clash_proxy": {
+        "name": "KR - zhuhai.uk",
+        "type": "vless",
+        "server": "13.124.252.207",
+        "port": 45314,
+        "uuid": "92e2a199-0c77-4668-abd7-ee2426b9fcf5",
+        "flow": "xtls-rprx-vision",
+        "tls": true,
+        "servername": "www.apple.com",
+        "client-fingerprint": "chrome",
+        "reality-opts": {
+          "public-key": "VlJtVn6BxAV5CSnGw1DxL7XoLjpnx5JuxAJ-0Ac1pnM",
+          "short-id": "c45dce8a5c830a6b"
+        }
+      },
+      "last_tested": "2026-10-02T00:11:19.949011"
+    },
+    {
+      "id": "vpn_kr_36",
+      "name": "KR - zhuhai.uk 02",
+      "type": "vless",
+      "server": "210.216.173.110",
+      "port": 43947,
+      "country": "Korea Republic of",
+      "country_code": "KR",
+      "exit_ip": "210.216.173.110",
+      "real_ping_ms": 835.5,
+      "status": "online",
+      "clash_proxy": {
+        "name": "KR - zhuhai.uk 02",
+        "type": "vless",
+        "server": "210.216.173.110",
+        "port": 43947,
+        "uuid": "a4d8a751-1f40-41a1-ad6e-0c2262ff6f3d",
+        "flow": "xtls-rprx-vision",
+        "tls": true,
+        "servername": "www.apple.com",
+        "client-fingerprint": "chrome",
+        "reality-opts": {
+          "public-key": "zsm0QW_XhBgy2SRHJCfIv_qH-a4fWLnUnZPLglL6iDg",
+          "short-id": "e28b3581ca16eeef"
+        }
+      },
+      "last_tested": "2026-10-02T00:11:21.587336"
+    },
+    {
+      "id": "vpn_jp_2",
+      "name": "JP-东京-CTG-vless-02",
+      "type": "vless",
+      "server": "137.220.221.179",
+      "port": 443,
+      "country": "Japan",
+      "country_code": "JP",
+      "exit_ip": "137.220.221.179",
+      "real_ping_ms": 849.4,
+      "status": "online",
+      "clash_proxy": {
+        "encryption": "none",
+        "network": "tcp",
+        "port": 443,
+        "server": "137.220.221.179",
+        "tls": false,
+        "type": "vless",
+        "uuid": "a16a3336-c9ab-489f-9b85-c973f5e2cfa4",
+        "name": "JP-东京-CTG-vless-02"
+      },
+      "last_tested": "2026-10-02T00:09:06.301575"
+    },
+    {
+      "id": "vpn_us_15",
+      "name": "US-洛杉矶-Dedicated.com-ss-28",
+      "type": "ss",
+      "server": "173.234.25.90",
+      "port": 15240,
+      "country": "United States",
+      "country_code": "US",
+      "exit_ip": "173.234.25.90",
+      "real_ping_ms": 855.3,
+      "status": "online",
+      "clash_proxy": {
+        "cipher": "aes-128-gcm",
+        "password": "62dd75ba944947d4ca983cf1679b3797",
+        "port": 15240,
+        "server": "173.234.25.90",
+        "type": "ss",
+        "name": "US-洛杉矶-Dedicated.com-ss-28"
+      },
+      "last_tested": "2026-10-02T00:10:08.594697"
+    },
+    {
+      "id": "vpn_jp_5",
+      "name": "JP-東京都-Amazon-anytls-05",
+      "type": "anytls",
+      "server": "jp-02-hdja-kido.younai-ytl.shop",
+      "port": 37236,
+      "country": "Japan",
+      "country_code": "JP",
+      "exit_ip": "141.11.86.117",
+      "real_ping_ms": 884.0,
+      "status": "online",
+      "clash_proxy": {
+        "password": "3fc0f254-54c3-4cf3-896b-5999a2b4c757",
+        "port": 37236,
+        "server": "jp-02-hdja-kido.younai-ytl.shop",
+        "skip-cert-verify": true,
+        "sni": "tw16.swiftrelay.cc",
+        "type": "anytls",
+        "udp": true,
+        "name": "JP-東京都-Amazon-anytls-05"
+      },
+      "last_tested": "2026-10-02T00:09:11.522537"
+    },
+    {
+      "id": "vpn_jp_12",
+      "name": "JP-東京都-Amazon-anytls-14",
+      "type": "anytls",
+      "server": "jpglobal-identity-federation-auth.younai-ytl.shop",
+      "port": 65308,
+      "country": "Japan",
+      "country_code": "JP",
+      "exit_ip": "5.104.86.142",
+      "real_ping_ms": 897.9,
+      "status": "online",
+      "clash_proxy": {
+        "password": "3fc0f254-54c3-4cf3-896b-5999a2b4c757",
+        "port": 65308,
+        "server": "jpglobal-identity-federation-auth.younai-ytl.shop",
+        "skip-cert-verify": true,
+        "sni": "jp11.pulsarcore.site",
+        "type": "anytls",
+        "udp": true,
+        "name": "JP-東京都-Amazon-anytls-14"
+      },
+      "last_tested": "2026-10-02T00:09:32.891400"
+    },
+    {
+      "id": "vpn_gb_40",
+      "name": "IE - zhuhai.uk 01",
+      "type": "trojan",
+      "server": "ie.tronsg.com",
+      "port": 443,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "3.255.76.207",
+      "real_ping_ms": 943.4,
+      "status": "online",
+      "clash_proxy": {
+        "name": "IE - zhuhai.uk 01",
+        "type": "trojan",
+        "server": "ie.tronsg.com",
+        "port": 443,
+        "password": "Trojan@82164024",
+        "udp": true,
+        "sni": "ie.tronsg.com",
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:11:40.014247"
+    },
+    {
+      "id": "vpn_tw_11",
+      "name": "TW-半线-Chunghwa-anytls-13",
+      "type": "anytls",
+      "server": "tw56-kb.cybergalaxy.me",
+      "port": 443,
+      "country": "Taiwan",
+      "country_code": "TW",
+      "exit_ip": "1.168.165.108",
+      "real_ping_ms": 956.9,
+      "status": "online",
+      "clash_proxy": {
+        "password": "3fc0f254-54c3-4cf3-896b-5999a2b4c757",
+        "port": 443,
+        "server": "tw56-kb.cybergalaxy.me",
+        "skip-cert-verify": true,
+        "sni": "tw56-kb.cybergalaxy.me",
+        "type": "anytls",
+        "udp": true,
+        "name": "TW-半线-Chunghwa-anytls-13"
+      },
+      "last_tested": "2026-10-02T00:09:31.190332"
+    },
+    {
+      "id": "vpn_gb_24",
+      "name": "FR - zhuhai.uk 02",
+      "type": "hysteria2",
+      "server": "62.210.7.139",
+      "port": 60111,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "62.210.124.146",
+      "real_ping_ms": 960.5,
+      "status": "online",
+      "clash_proxy": {
+        "name": "FR - zhuhai.uk 02",
+        "type": "hysteria2",
+        "server": "62.210.7.139",
+        "port": 60111,
+        "password": "github.com/Alvin9999-newpac/fanqiang",
+        "sni": "google.com",
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:10:45.920966"
+    },
+    {
+      "id": "vpn_tw_9",
+      "name": "TW-半线-Chunghwa-anytls-10",
+      "type": "anytls",
+      "server": "tw63-kb.cybergalaxy.me",
+      "port": 443,
+      "country": "Taiwan",
+      "country_code": "TW",
+      "exit_ip": "61.224.92.223",
+      "real_ping_ms": 977.5,
+      "status": "online",
+      "clash_proxy": {
+        "password": "3fc0f254-54c3-4cf3-896b-5999a2b4c757",
+        "port": 443,
+        "server": "tw63-kb.cybergalaxy.me",
+        "skip-cert-verify": true,
+        "sni": "tw63-kb.cybergalaxy.me",
+        "type": "anytls",
+        "udp": true,
+        "name": "TW-半线-Chunghwa-anytls-10"
+      },
+      "last_tested": "2026-10-02T00:09:23.186317"
+    },
+    {
+      "id": "vpn_gb_39",
+      "name": "IN - zhuhai.uk",
+      "type": "socks5",
+      "server": "65.20.79.228",
+      "port": 40001,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "104.28.207.242",
+      "real_ping_ms": 1046.0,
+      "status": "online",
+      "clash_proxy": {
+        "name": "IN - zhuhai.uk",
+        "type": "socks5",
+        "server": "65.20.79.228",
+        "port": 40001
+      },
+      "last_tested": "2026-10-02T00:11:28.534993"
+    },
+    {
+      "id": "vpn_gb_34",
+      "name": "IT - zhuhai.uk",
+      "type": "http",
+      "server": "185.183.105.146",
+      "port": 443,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "185.183.105.157",
+      "real_ping_ms": 1080.4,
+      "status": "online",
+      "clash_proxy": {
+        "name": "IT - zhuhai.uk",
+        "type": "http",
+        "server": "185.183.105.146",
+        "port": 443,
+        "tls": true,
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:11:12.491956"
+    },
+    {
+      "id": "vpn_us_32",
+      "name": "US - zhuhai.uk 03",
+      "type": "vless",
+      "server": "45.138.100.118",
+      "port": 443,
+      "country": "United States",
+      "country_code": "US",
+      "exit_ip": "45.138.100.118",
+      "real_ping_ms": 1083.4,
+      "status": "online",
+      "clash_proxy": {
+        "name": "US - zhuhai.uk 03",
+        "type": "vless",
+        "server": "45.138.100.118",
+        "port": 443,
+        "uuid": "af2bf319-ba88-4fec-8317-2b6a8cee96d1",
+        "flow": "xtls-rprx-vision",
+        "tls": true,
+        "servername": "usa.ghostnode.lol",
+        "client-fingerprint": "firefox",
+        "reality-opts": {
+          "public-key": "8j_oF5ia0SKDQk-xbwHpYOazqNnnLw-oujwUoZGN_3I"
+        }
+      },
+      "last_tested": "2026-10-02T00:11:08.378562"
+    },
+    {
+      "id": "vpn_nl_30",
+      "name": "NL - zhuhai.uk 03",
+      "type": "http",
+      "server": "84.17.47.147",
+      "port": 9002,
+      "country": "Netherlands",
+      "country_code": "NL",
+      "exit_ip": "84.17.47.147",
+      "real_ping_ms": 1090.1,
+      "status": "online",
+      "clash_proxy": {
+        "name": "NL - zhuhai.uk 03",
+        "type": "http",
+        "server": "84.17.47.147",
+        "port": 9002,
+        "username": "null",
+        "password": "null",
+        "tls": true,
+        "sni": "84.17.47.147",
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:11:04.565268"
+    },
+    {
+      "id": "vpn_kr_10",
+      "name": "KR-Incheon-Amazon-anytls-12",
+      "type": "anytls",
+      "server": "svip.skycon808.com",
+      "port": 60005,
+      "country": "Korea Republic of",
+      "country_code": "KR",
+      "exit_ip": "194.76.113.81",
+      "real_ping_ms": 1121.8,
+      "status": "online",
+      "clash_proxy": {
+        "type": "anytls",
+        "server": "svip.skycon808.com",
+        "port": 60005,
+        "password": "13f0acfa-38c1-4e82-a758-583aa31740df",
+        "sni": "xjp18.2uuzhe.com",
+        "skip-cert-verify": true,
+        "tls": true,
+        "udp": true,
+        "name": "KR-Incheon-Amazon-anytls-12"
+      },
+      "last_tested": "2026-10-02T00:09:29.430542"
+    },
+    {
+      "id": "vpn_jp_31",
+      "name": "JP - zhuhai.uk 02",
+      "type": "ss",
+      "server": "103.115.18.145",
+      "port": 20999,
+      "country": "Japan",
+      "country_code": "JP",
+      "exit_ip": "103.115.18.145",
+      "real_ping_ms": 1123.8,
+      "status": "online",
+      "clash_proxy": {
+        "name": "JP - zhuhai.uk 02",
+        "type": "ss",
+        "server": "103.115.18.145",
+        "port": 20999,
+        "cipher": "aes-256-gcm",
+        "password": "9cfaa78d51ac366f"
+      },
+      "last_tested": "2026-10-02T00:11:06.491662"
+    },
+    {
+      "id": "vpn_us_14",
+      "name": "US-芝加哥-Dedicated.com-ss-26",
+      "type": "ss",
+      "server": "103.214.111.162",
+      "port": 16469,
+      "country": "United States",
+      "country_code": "US",
+      "exit_ip": "103.214.111.162",
+      "real_ping_ms": 1161.9,
+      "status": "online",
+      "clash_proxy": {
+        "cipher": "aes-128-gcm",
+        "password": "87e9cb62706b5cd08da95b8b423cb673",
+        "port": 16469,
+        "server": "103.214.111.162",
+        "type": "ss",
+        "name": "US-芝加哥-Dedicated.com-ss-26"
+      },
+      "last_tested": "2026-10-02T00:10:02.607302"
+    },
+    {
+      "id": "vpn_gb_41",
+      "name": "SE - zhuhai.uk 01",
+      "type": "vless",
+      "server": "34.51.240.236",
+      "port": 443,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "34.51.240.236",
+      "real_ping_ms": 1232.3,
+      "status": "online",
+      "clash_proxy": {
+        "name": "SE - zhuhai.uk 01",
+        "type": "vless",
+        "server": "34.51.240.236",
+        "port": 443,
+        "uuid": "788950f8-dbd9-4234-a42c-a7204665ce9f",
+        "udp": true,
+        "network": "tcp",
+        "tls": true,
+        "servername": "www.cloudflare.com",
+        "client-fingerprint": "chrome",
+        "reality-opts": {
+          "public-key": "SOvacyM6CABhBHYdOHvhXbkNLHJBHuAkoJj2Z13xKlE",
+          "short-id": "b4a6faed784ff461"
+        }
+      },
+      "last_tested": "2026-10-02T00:11:42.049665"
+    },
+    {
+      "id": "vpn_gb_22",
+      "name": "ES - zhuhai.uk",
+      "type": "vless",
+      "server": "34.175.107.233",
+      "port": 443,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "34.175.107.233",
+      "real_ping_ms": 1272.9,
+      "status": "online",
+      "clash_proxy": {
+        "name": "ES - zhuhai.uk",
+        "type": "vless",
+        "server": "34.175.107.233",
+        "port": 443,
+        "uuid": "c55c9880-2f9c-4ad6-bfc2-5054516bf613",
+        "tls": true,
+        "servername": "www.cloudflare.com",
+        "skip-cert-verify": true,
+        "client-fingerprint": "ios",
+        "reality-opts": {
+          "public-key": "lM9EQ1rZH9inQjrZesuqgldsXYN_yfT5-tqhPfbyen4",
+          "short-id": "1c9e101e99bf86bb"
+        }
+      },
+      "last_tested": "2026-10-02T00:10:40.816723"
+    },
+    {
+      "id": "vpn_gb_25",
+      "name": "RO - zhuhai.uk 02",
+      "type": "http",
+      "server": "193.176.84.38",
+      "port": 9002,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "193.176.84.38",
+      "real_ping_ms": 1276.5,
+      "status": "online",
+      "clash_proxy": {
+        "name": "RO - zhuhai.uk 02",
+        "type": "http",
+        "server": "193.176.84.38",
+        "port": 9002,
+        "tls": true,
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:10:52.324981"
+    },
+    {
+      "id": "vpn_gb_19",
+      "name": "RO - zhuhai.uk",
+      "type": "http",
+      "server": "193.176.84.32",
+      "port": 9002,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "193.176.84.32",
+      "real_ping_ms": 1301.5,
+      "status": "online",
+      "clash_proxy": {
+        "name": "RO - zhuhai.uk",
+        "type": "http",
+        "server": "193.176.84.32",
+        "port": 9002,
+        "tls": true,
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:10:33.651454"
+    },
+    {
+      "id": "vpn_tw_29",
+      "name": "TW - zhuhai.uk 02",
+      "type": "tuic",
+      "server": "tw1.dexlos.com",
+      "port": 8080,
+      "country": "Taiwan",
+      "country_code": "TW",
+      "exit_ip": "36.227.195.138",
+      "real_ping_ms": 1334.7,
+      "status": "online",
+      "clash_proxy": {
+        "name": "TW - zhuhai.uk 02",
+        "type": "tuic",
+        "server": "tw1.dexlos.com",
+        "port": 8080,
+        "uuid": "7FE4CBB4-D40B-4896-AE9B-3EF09D5B18E6",
+        "password": "7FE4CBB4-D40B-4896-AE9B-3EF09D5B18E6",
+        "sni": "tw1.dexlos.com",
+        "alpn": [
+          "h3"
+        ]
+      },
+      "last_tested": "2026-10-02T00:11:02.671958"
+    },
+    {
+      "id": "vpn_gb_43",
+      "name": "IT - zhuhai.uk 01",
+      "type": "vless",
+      "server": "34.154.18.129",
+      "port": 443,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "34.154.18.129",
+      "real_ping_ms": 1414.8,
+      "status": "online",
+      "clash_proxy": {
+        "name": "IT - zhuhai.uk 01",
+        "type": "vless",
+        "server": "34.154.18.129",
+        "port": 443,
+        "uuid": "fffe33b6-5735-4a71-adb1-1c154def9024",
+        "udp": true,
+        "network": "tcp",
+        "tls": true,
+        "servername": "www.cloudflare.com",
+        "client-fingerprint": "chrome",
+        "reality-opts": {
+          "public-key": "-Tb9KKp870JxcZ3Ka7Rx5ez3QBYryX4e8_jdyNZu2wE",
+          "short-id": "ed278463058a6dc9"
+        }
+      },
+      "last_tested": "2026-10-02T00:11:57.728121"
+    },
+    {
+      "id": "vpn_gb_33",
+      "name": "FI - zhuhai.uk",
+      "type": "vless",
+      "server": "35.228.61.63",
+      "port": 443,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "35.228.61.63",
+      "real_ping_ms": 1426.2,
+      "status": "online",
+      "clash_proxy": {
+        "name": "FI - zhuhai.uk",
+        "type": "vless",
+        "server": "35.228.61.63",
+        "port": 443,
+        "uuid": "06e58eed-afc8-4cbf-a0bf-1b7b42e1a87f",
+        "tls": true,
+        "servername": "www.cloudflare.com",
+        "client-fingerprint": "safari",
+        "reality-opts": {
+          "public-key": "wJwb5WExAnmGiq9mmjtMvoA8E-k10u5VvPegm9RomWU",
+          "short-id": "d4b34bc6b3d2b5ab"
+        }
+      },
+      "last_tested": "2026-10-02T00:11:10.608147"
+    },
+    {
+      "id": "vpn_jp_3",
+      "name": "JP-Minamish-The-trojan-03",
+      "type": "trojan",
+      "server": "jp.tronsg.com",
+      "port": 443,
+      "country": "Japan",
+      "country_code": "JP",
+      "exit_ip": "108.61.186.37",
+      "real_ping_ms": 1445.1,
+      "status": "online",
+      "clash_proxy": {
+        "password": "Trojan@82164024",
+        "port": 443,
+        "server": "jp.tronsg.com",
+        "skip-cert-verify": true,
+        "sni": "jp.tronsg.com",
+        "type": "trojan",
+        "udp": true,
+        "name": "JP-Minamish-The-trojan-03"
+      },
+      "last_tested": "2026-10-02T00:09:08.549783"
+    },
+    {
+      "id": "vpn_nl_18",
+      "name": "NL - zhuhai.uk",
+      "type": "http",
+      "server": "185.238.168.20",
+      "port": 443,
+      "country": "Netherlands",
+      "country_code": "NL",
+      "exit_ip": "185.93.106.214",
+      "real_ping_ms": 1484.0,
+      "status": "online",
+      "clash_proxy": {
+        "name": "NL - zhuhai.uk",
+        "type": "http",
+        "server": "185.238.168.20",
+        "port": 443,
+        "tls": true,
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:10:27.231130"
+    },
+    {
+      "id": "vpn_sg_37",
+      "name": "SG - zhuhai.uk",
+      "type": "hysteria2",
+      "server": "138.2.73.238",
+      "port": 50160,
+      "country": "Singapore",
+      "country_code": "SG",
+      "exit_ip": "138.2.73.238",
+      "real_ping_ms": 1490.3,
+      "status": "online",
+      "clash_proxy": {
+        "name": "SG - zhuhai.uk",
+        "type": "hysteria2",
+        "server": "138.2.73.238",
+        "port": 50160,
+        "password": "f87376e17da040ed04c9665ce8972930",
+        "sni": "138.2.73.238",
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:11:23.881357"
+    },
+    {
+      "id": "vpn_gb_21",
+      "name": "FR - zhuhai.uk",
+      "type": "http",
+      "server": "217.181.201.254",
+      "port": 8090,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "217.181.201.254",
+      "real_ping_ms": 1561.7,
+      "status": "online",
+      "clash_proxy": {
+        "name": "FR - zhuhai.uk",
+        "type": "http",
+        "server": "217.181.201.254",
+        "port": 8090,
+        "tls": true,
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:10:38.740193"
+    },
+    {
+      "id": "vpn_nl_28",
+      "name": "NL - zhuhai.uk 02",
+      "type": "anytls",
+      "server": "xdew21ti.zf-mix.9999231.xyz",
+      "port": 1026,
+      "country": "Netherlands",
+      "country_code": "NL",
+      "exit_ip": "77.90.50.59",
+      "real_ping_ms": 1576.8,
+      "status": "online",
+      "clash_proxy": {
+        "name": "NL - zhuhai.uk 02",
+        "type": "anytls",
+        "server": "xdew21ti.zf-mix.9999231.xyz",
+        "port": 1026,
+        "password": "a7c5d30b-ce9b-4e34-b5cb-66f8308790ef",
+        "udp": true,
+        "sni": "nl-wy.9999231.xyz",
+        "client-fingerprint": "chrome"
+      },
+      "last_tested": "2026-10-02T00:11:00.534236"
+    },
+    {
+      "id": "vpn_gb_20",
+      "name": "RU - zhuhai.uk",
+      "type": "hysteria2",
+      "server": "91.240.86.70",
+      "port": 22443,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "185.16.213.71",
+      "real_ping_ms": 1921.5,
+      "status": "online",
+      "clash_proxy": {
+        "name": "RU - zhuhai.uk",
+        "type": "hysteria2",
+        "server": "91.240.86.70",
+        "port": 22443,
+        "password": "3f63c86c-ac4a-4900-85cf-4fedf93c2ca5",
+        "sni": "hy.quattro-tech.ru",
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:10:36.375454"
+    },
+    {
+      "id": "vpn_sg_38",
+      "name": "SG - zhuhai.uk 02",
+      "type": "anytls",
+      "server": "5vnnyeys.zf-mix.9999231.xyz",
+      "port": 1044,
+      "country": "Singapore",
+      "country_code": "SG",
+      "exit_ip": "152.42.218.56",
+      "real_ping_ms": 2000.8,
+      "status": "online",
+      "clash_proxy": {
+        "name": "SG - zhuhai.uk 02",
+        "type": "anytls",
+        "server": "5vnnyeys.zf-mix.9999231.xyz",
+        "port": 1044,
+        "password": "6cdc1a00-e9e7-4ef2-8d53-541688f9324c",
+        "udp": true,
+        "sni": "sg-cc.9999231.xyz",
+        "client-fingerprint": "chrome"
+      },
+      "last_tested": "2026-10-02T00:11:26.686032"
+    },
+    {
+      "id": "vpn_gb_26",
+      "name": "RO - zhuhai.uk 03",
+      "type": "http",
+      "server": "193.176.84.35",
+      "port": 9002,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "193.176.84.35",
+      "real_ping_ms": 2071.5,
+      "status": "online",
+      "clash_proxy": {
+        "name": "RO - zhuhai.uk 03",
+        "type": "http",
+        "server": "193.176.84.35",
+        "port": 9002,
+        "tls": true,
+        "sni": "www.bing.com",
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:10:55.199501"
+    },
+    {
+      "id": "vpn_gb_27",
+      "name": "CL - zhuhai.uk",
+      "type": "vless",
+      "server": "34.176.187.219",
+      "port": 443,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "34.176.187.219",
+      "real_ping_ms": 2151.1,
+      "status": "online",
+      "clash_proxy": {
+        "name": "CL - zhuhai.uk",
+        "type": "vless",
+        "server": "34.176.187.219",
+        "port": 443,
+        "uuid": "ad5325f8-f0b3-41c4-a561-113529b60e70",
+        "tls": true,
+        "servername": "www.cloudflare.com",
+        "skip-cert-verify": true,
+        "client-fingerprint": "chrome",
+        "reality-opts": {
+          "public-key": "HnHVuSObMrldWGzq1-Eb93fwgu6QQRp6H0_8LX3ikDc",
+          "short-id": "2c2d919f5183d0b7"
+        }
+      },
+      "last_tested": "2026-10-02T00:10:58.154257"
+    },
+    {
+      "id": "vpn_jp_7",
+      "name": "JP-东京-UCLOUD-socks5-08",
+      "type": "socks5",
+      "server": "101.36.104.46",
+      "port": 10808,
+      "country": "Japan",
+      "country_code": "JP",
+      "exit_ip": "101.36.104.46",
+      "real_ping_ms": 2170.0,
+      "status": "online",
+      "clash_proxy": {
+        "type": "socks5",
+        "server": "101.36.104.46",
+        "port": 10808,
+        "name": "JP-东京-UCLOUD-socks5-08"
+      },
+      "last_tested": "2026-10-02T00:09:20.203233"
+    },
+    {
+      "id": "vpn_gb_16",
+      "name": "BE - zhuhai.uk",
+      "type": "http",
+      "server": "146.70.123.98",
+      "port": 443,
+      "country": "United Kingdom",
+      "country_code": "GB",
+      "exit_ip": "146.70.123.103",
+      "real_ping_ms": 2492.4,
+      "status": "online",
+      "clash_proxy": {
+        "name": "BE - zhuhai.uk",
+        "type": "http",
+        "server": "146.70.123.98",
+        "port": 443,
+        "tls": true,
+        "skip-cert-verify": true
+      },
+      "last_tested": "2026-10-02T00:10:20.545125"
+    },
+    {
+      "id": "vpn_jp_23",
+      "name": "JP - zhuhai.uk",
+      "type": "http",
+      "server": "fan.571589.xyz",
+      "port": 443,
+      "country": "Japan",
+      "country_code": "JP",
+      "exit_ip": "14.137.237.91",
+      "real_ping_ms": 2537.2,
+      "status": "online",
+      "clash_proxy": {
+        "name": "JP - zhuhai.uk",
+        "type": "http",
+        "server": "fan.571589.xyz",
+        "port": 443,
+        "tls": true,
+        "sni": "fan.571589.xyz"
+      },
+      "last_tested": "2026-10-02T00:10:44.157218"
+    },
+    {
+      "id": "vpn_us_17",
+      "name": "US - zhuhai.uk",
+      "type": "http",
+      "server": "crosscards.site",
+      "port": 443,
+      "country": "United States",
+      "country_code": "US",
+      "exit_ip": "64.62.219.34",
+      "real_ping_ms": 3594.9,
+      "status": "online",
+      "clash_proxy": {
+        "name": "US - zhuhai.uk",
+        "type": "http",
+        "server": "crosscards.site",
+        "port": 443,
+        "username": "null",
+        "password": "None",
+        "tls": true
+      },
+      "last_tested": "2026-10-02T00:10:24.943999"
+    },
+    {
+      "id": "vpn_de_42",
+      "name": "DE - zhuhai.uk 03",
+      "type": "vless",
+      "server": "176.109.111.7",
+      "port": 9881,
+      "country": "Germany",
+      "country_code": "DE",
+      "exit_ip": "144.31.242.183",
+      "real_ping_ms": 4003.2,
+      "status": "online",
+      "clash_proxy": {
+        "name": "DE - zhuhai.uk 03",
+        "type": "vless",
+        "server": "176.109.111.7",
+        "port": 9881,
+        "uuid": "5d16ac22-6eea-426f-b778-6f4c2961faef",
+        "udp": true,
+        "network": "grpc",
+        "tls": true,
+        "servername": "dl.google.com",
+        "client-fingerprint": "chrome",
+        "reality-opts": {
+          "public-key": "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0",
+          "short-id": "aa"
+        },
+        "grpc-opts": {
+          "grpc-service-name": "grpc-tunnel"
+        }
+      },
+      "last_tested": "2026-10-02T00:11:55.510432"
+    }
+  ]
+}

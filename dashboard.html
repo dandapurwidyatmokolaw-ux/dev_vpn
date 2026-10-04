@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Free VPN Manager & Auto-Failover</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #38bdf8;
+            --primary-hover: #0284c7;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .header-title h1 {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-title p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .badge-pulse {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--success);
+            box-shadow: 0 0 10px var(--success);
+        }
+
+        /* Top Hero Card: Status & Quick Control */
+        .status-hero {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        @media (max-width: 860px) {
+            .status-hero { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .status-disconnected {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        .status-connected {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .server-highlight {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 20px;
+        }
+        .flag-icon {
+            font-size: 42px;
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 8px 12px;
+            border: 1px solid var(--card-border);
+        }
+        .server-meta h2 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .server-meta .ip-tag {
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            background: #0f172a;
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 16px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .stat-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-top: 2px;
+        }
+
+        /* Action Buttons */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 10px 18px;
+            font-size: 13.5px;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            color: #0f172a;
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            color: #fff;
+        }
+        .btn-danger {
+            background-color: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+        }
+        .btn-danger:hover {
+            background-color: var(--danger);
+            color: #fff;
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+        }
+        .btn-outline:hover {
+            background-color: var(--card-border);
+        }
+
+        /* Browser Guide Box */
+        .guide-box {
+            background: rgba(56, 189, 248, 0.05);
+            border: 1px dashed rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .guide-box h3 {
+            font-size: 15px;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .guide-box ol {
+            padding-left: 20px;
+            font-size: 12.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .guide-box code {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        /* Controls & Filter Bar */
+        .table-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .search-input {
+            flex: 1;
+            min-width: 250px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: #fff;
+            outline: none;
+            font-size: 13.5px;
+        }
+        .search-input:focus {
+            border-color: var(--primary);
+        }
+
+        /* Table */
+        .table-wrapper {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 13.5px;
+        }
+        th {
+            background: #151f32;
+            padding: 12px 16px;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--card-border);
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+            vertical-align: middle;
+        }
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .tag-proto {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: #334155;
+            color: #cbd5e1;
+        }
+        .badge-ping {
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        /* Toast Notifications */
+        #toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            background: #1e293b;
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 1px solid var(--card-border);
+            font-size: 13.5px;
+            display: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <div class="header-title">
+            <h1><span>⚡</span> Free VPN Gateway & Auto-Failover</h1>
+            <p>Dedicated Inbound Proxy <code>127.0.0.1:10808</code> &bull; Hanya Browser Tertentu (Firefox) yang Lewat VPN, Browser Lain & Windows Normal</p>
+        </div>
+        <div>
+            <button class="btn btn-outline" onclick="triggerRefresh()">🔄 Update Server Web</button>
+        </div>
+    </header>
+
+    <!-- Top Status Hero -->
+    <div class="status-hero">
+        <!-- Status Box -->
+        <div class="card">
+            <div class="status-header">
+                <span class="status-indicator status-disconnected" id="statusBadge">
+                    <span class="badge-pulse" style="background:#ef4444;box-shadow:none;"></span>
+                    <span>DISCONNECTED</span>
+                </span>
+                <span style="font-size:12.5px;color:var(--text-muted);" id="failoverStatus">Auto-Failover: <strong>AKTIF</strong></span>
+            </div>
+
+            <div class="server-highlight">
+                <div class="flag-icon" id="serverFlag">🌐</div>
+                <div class="server-meta">
+                    <h2 id="serverName">Belum Terhubung</h2>
+                    <div class="ip-tag" id="serverIp">Exit IP: -</div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">Latensi Real</div>
+                    <div class="stat-value" id="statPing">- ms</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Protokol</div>
+                    <div class="stat-value" id="statProto">-</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Proxy Listener</div>
+                    <div class="stat-value" style="color:var(--primary)">127.0.0.1:10808</div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="quickConnect()">⚡ Sambungkan Server Terbaik</button>
+                <button class="btn btn-danger" onclick="disconnectVPN()">⏹ Putuskan</button>
+                <button class="btn btn-outline" onclick="manualFailover()">⏭ Pindah Server Lain (Failover)</button>
+            </div>
+        </div>
+
+        <!-- Browser Guide Card -->
+        <div class="card guide-box">
+            <h3>🦊 Cara Pakai di Firefox Saja</h3>
+            <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">
+                Browser Chrome, Edge, Game, dan Windows tetap menggunakan koneksi biasa (IP asli). Hanya Firefox yang dialihkan lewat VPN:
+            </p>
+            <ol>
+                <li>Buka <strong>Firefox</strong> &rarr; <strong>Settings</strong> (Pengaturan).</li>
+                <li>Ketik <em>"proxy"</em> di kolom cari &rarr; Klik <strong>Settings...</strong></li>
+                <li>Pilih <strong>Manual proxy configuration</strong>:
+                    <br>&bull; <strong>HTTP Proxy:</strong> <code>127.0.0.1</code> | Port: <code>10808</code>
+                    <br>&bull; Atau <strong>SOCKS Host:</strong> <code>127.0.0.1</code> | Port: <code>10809</code> (Pilih <strong>SOCKS v5</strong>)
+                </li>
+                <li>Klik <strong>OK</strong>. Selesai!</li>
+            </ol>
+            <div style="margin-top:12px;font-size:11.5px;color:#38bdf8;">
+                💡 <em>Port forwarding Windows telah aktif (127.0.0.1:10808 &bull; IP WSL: 172.17.68.249). Jika koneksi VPN terputus, backend otomatis memindahkan rute tanpa perlu ubah setting lagi!</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- Server Table Section -->
+    <div class="table-controls">
+        <h3 style="font-size:17px;font-weight:700;">Daftar Server VPN Gratis Terverifikasi (<span id="serverCount">0</span>)</h3>
+        <input type="text" class="search-input" id="searchBox" placeholder="Cari negara, IP, protokol..." onkeyup="filterServers()">
+    </div>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Negara</th>
+                    <th>Node / Server</th>
+                    <th>Protokol</th>
+                    <th>Exit IP</th>
+                    <th>Latensi Ping</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="serverTableBody">
+                <tr>
+                    <td colspan="6" style="text-align:center;padding:24px;color:var(--text-muted);">Memuat daftar server...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="toast">Notifikasi</div>
+
+<script>
+let serversData = [];
+let connectedId = null;
+
+function showToast(msg, isError = false) {
+    const t = document.getElementById('toast');
+    t.innerText = msg;
+    t.style.borderColor = isError ? '#ef4444' : '#38bdf8';
+    t.style.display = 'block';
+    setTimeout(() => { t.style.display = 'none'; }, 3000);
+}
+
+function getFlag(countryCode) {
+    const flags = {
+        'JP': '🇯🇵', 'SG': '🇸🇬', 'US': '🇺🇸', 'KR': '🇰🇷',
+        'TW': '🇹🇼', 'HK': '🇭🇰', 'PH': '🇵🇭', 'MY': '🇲🇾',
+        'CA': '🇨🇦', 'NL': '🇳🇱', 'DE': '🇩🇪', 'GB': '🇬🇧',
+        'VN': '🇻🇳', 'RO': '🇷🇴', 'UN': '🌐'
+    };
+    return flags[countryCode] || '🌐';
+}
+
+async function loadStatus() {
+    try {
+        const res = await fetch('/api/status');
+        const data = await res.json();
+        
+        const badge = document.getElementById('statusBadge');
+        if (data.connected && data.current_server) {
+            connectedId = data.current_server.id;
+            badge.className = 'status-indicator status-connected';
+            badge.innerHTML = '<span class="badge-pulse"></span><span>TERHUBUNG</span>';
+            
+            document.getElementById('serverFlag').innerText = getFlag(data.current_server.country_code);
+            document.getElementById('serverName').innerText = `${data.current_server.country} (${data.current_server.country_code})`;
+            document.getElementById('serverIp').innerText = `Exit IP: ${data.current_server.exit_ip}`;
+            document.getElementById('statPing').innerText = `${data.current_server.real_ping_ms} ms`;
+            document.getElementById('statProto').innerText = data.current_server.type.toUpperCase();
+        } else {
+            connectedId = null;
+            badge.className = 'status-indicator status-disconnected';
+            badge.innerHTML = '<span class="badge-pulse" style="background:#ef4444;box-shadow:none;"></span><span>DISCONNECTED</span>';
+            document.getElementById('serverFlag').innerText = '🌐';
+            document.getElementById('serverName').innerText = 'Belum Terhubung';
+            document.getElementById('serverIp').innerText = 'Exit IP: -';
+            document.getElementById('statPing').innerText = '- ms';
+            document.getElementById('statProto').innerText = '-';
+        }
+        renderTable();
+    } catch(e) {
+        console.error("Error fetching status:", e);
+    }
+}
+
+async function loadServers() {
+    try {
+        const res = await fetch('/api/servers');
+        serversData = await res.json();
+        document.getElementById('serverCount').innerText = serversData.length;
+        renderTable();
+    } catch(e) {
+        console.error("Error loading servers:", e);
+    }
+}
+
+function renderTable() {
+    const tbody = document.getElementById('serverTableBody');
+    const search = document.getElementById('searchBox').value.toLowerCase();
+    tbody.innerHTML = '';
+
+    const filtered = serversData.filter(s => {
+        return s.country.toLowerCase().includes(search) || 
+               s.exit_ip.includes(search) || 
+               s.type.toLowerCase().includes(search) ||
+               s.country_code.toLowerCase().includes(search);
+    });
+
+    if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:20px;color:var(--text-muted)">Tidak ditemukan server yang cocok.</td></tr>';
+        return;
+    }
+
+    filtered.forEach((s, idx) => {
+        const tr = document.createElement('tr');
+        const isCurrent = (connectedId === s.id);
+        
+        tr.innerHTML = `
+            <td><strong>${getFlag(s.country_code)} ${s.country}</strong></td>
+            <td style="color:var(--text-muted)">${s.name}</td>
+            <td><span class="tag-proto">${s.type}</span></td>
+            <td><code>${s.exit_ip}</code></td>
+            <td class="badge-ping">${s.real_ping_ms} ms</td>
+            <td>
+                ${isCurrent ? 
+                    `<button class="btn btn-danger" style="padding:6px 12px;font-size:12px;" onclick="disconnectVPN()">Putuskan</button>` :
+                    `<button class="btn btn-outline" style="padding:6px 12px;font-size:12px;" onclick="connectServer('${s.id}')">Sambungkan</button>`
+                }
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+function filterServers() {
+    renderTable();
+}
+
+async function connectServer(serverId) {
+    showToast("Menghubungkan ke server...");
+    try {
+        const res = await fetch('/api/connect', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({server_id: serverId})
+        });
+        const data = await res.json();
+        if (data.success) {
+            showToast(`Berhasil terhubung ke ${data.server.country}!`);
+            loadStatus();
+        } else {
+            showToast("Gagal terhubung ke server.", true);
+        }
+    } catch(e) {
+        showToast("Error koneksi.", true);
+    }
+}
+
+async function quickConnect() {
+    showToast("Menyambungkan ke server tercepat...");
+    try {
+        const res = await fetch('/api/connect', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({})
+        });
+        const data = await res.json();
+        if (data.success) {
+            showToast(`Berhasil terhubung ke ${data.server.country}!`);
+            loadStatus();
+        }
+    } catch(e) {
+        showToast("Error koneksi.", true);
+    }
+}
+
+async function disconnectVPN() {
+    try {
+        await fetch('/api/disconnect', {method: 'POST'});
+        showToast("VPN diputuskan.");
+        loadStatus();
+    } catch(e) {
+        showToast("Error disconnect.", true);
+    }
+}
+
+async function manualFailover() {
+    showToast("Mengalihkan ke server cadangan berikutnya...");
+    try {
+        const res = await fetch('/api/failover', {method: 'POST'});
+        const data = await res.json();
+        if (data.success) {
+            showToast(`Beralih ke: ${data.current_server.country}!`);
+            loadStatus();
+        } else {
+            showToast("Gagal failover.", true);
+        }
+    } catch(e) {
+        showToast("Error failover.", true);
+    }
+}
+
+async function triggerRefresh() {
+    showToast("Memulai scraping feed & benchmark baru di latar belakang...");
+    await fetch('/api/refresh', {method: 'POST'});
+    setTimeout(() => { loadServers(); loadStatus(); }, 5000);
+}
+
+// Initial load & Polling
+loadServers();
+loadStatus();
+setInterval(loadStatus, 4000);
+</script>
+
+</body>
+</html>

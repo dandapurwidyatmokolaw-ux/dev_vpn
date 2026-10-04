@@ -1,0 +1,5 @@
+1. buatkan list free vpn yang gratis cari di web 
+2. lsit di update otomatis cari vpn gratis dan cek koneksi kecepatannya
+3. list dalan vpn.json
+4 . buatkan tampilan web yang dapat memilih kodeksi vpn dan menyambungkan dan status jika vpn  tidak bisa diakses pindah ke vpn lainnya
+5. buatkan fase prd setiap Langkah diuji dahulu 

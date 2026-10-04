@@ -1,0 +1,23 @@
+# Compiled Binaries & Large Tools (download via download_binaries.sh)
+mihomo
+sing-box
+warp-plus
+*.exe
+
+# Python cache & logs
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# Runtime and local state
+runtime/
+docker_vpn/
+*.ovpn
+test_*.yaml
+test_*.json
+active_clash.yaml
+
+# System & Environment
+.env
+.DS_Store
